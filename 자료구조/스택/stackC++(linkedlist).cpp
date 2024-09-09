@@ -1,6 +1,6 @@
 /*
-ì´ë ‡ê²Œ íŠ¹ì • ìª½ì—ì„œë§Œ ì‚½ìž… ì‚­ì œ ì—°ì‚°ì´ ì´ë£¨ì–´ì§€ë¯€ë¡œ ì—°ê²° ë¦¬ìŠ¤íŠ¸ë¡œ êµ¬í˜„í•´ì•¼ í•©ë‹ˆë‹¤. ì—°ê²° ë¦¬ìŠ¤íŠ¸ë¡œ êµ¬í˜„í•´ì•¼ push,pop, top ì—°ì‚°ì´ ëª¨ë‘ O(1)ì´ì£ .
-ì—°ê²° ë¦¬ìŠ¤íŠ¸ë¡œ êµ¬í˜„í•  ê²½ìš° head í¬ì¸í„°ê°€ top ì›ì†Œë¥¼ ë°”ë¡œ ê°€ë¦¬í‚¤ê³  ìžˆëŠ” í˜•íƒœê°€ ë˜ë©°, pushë¥¼ í•  ë•Œë§ˆë‹¤ headë¥¼ ê°€ë¦¬í‚¤ëŠ” ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ë§Œë“¤ì–´ ê·¸ê±¸ ë‹¤ì‹œ headë¡œ ë®ì–´ì”Œìš°ê³ , popì„ í•  ë•Œë§ˆë‹¤ head ë…¸ë“œë¥¼ ì§€ìš°ê³  ê·¸ ë‹¤ìŒ ë…¸ë“œë¥¼ headë¡œ ë°”ê¾¸ëŠ” ì‹ìœ¼ë¡œ êµ¬í˜„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+?´? ‡ê²? ?Š¹? • ìª½ì—?„œë§? ?‚½?ž… ?‚­? œ ?—°?‚°?´ ?´ë£¨ì–´ì§?ë¯?ë¡? ?—°ê²? ë¦¬ìŠ¤?Š¸ë¡? êµ¬í˜„?•´?•¼ ?•©?‹ˆ?‹¤. ?—°ê²? ë¦¬ìŠ¤?Š¸ë¡? êµ¬í˜„?•´?•¼ push,pop, top ?—°?‚°?´ ëª¨ë‘ O(1)?´ì£?.
+?—°ê²? ë¦¬ìŠ¤?Š¸ë¡? êµ¬í˜„?•  ê²½ìš° head ?¬?¸?„°ê°? top ?›?†Œë¥? ë°”ë¡œ ê°?ë¦¬í‚¤ê³? ?žˆ?Š” ?˜•?ƒœê°? ?˜ë©?, pushë¥? ?•  ?•Œë§ˆë‹¤ headë¥? ê°?ë¦¬í‚¤?Š” ?ƒˆë¡œìš´ ?…¸?“œë¥? ë§Œë“¤?–´ ê·¸ê±¸ ?‹¤?‹œ headë¡? ?®?–´?”Œ?š°ê³?, pop?„ ?•  ?•Œë§ˆë‹¤ head ?…¸?“œë¥? ì§??š°ê³? ê·? ?‹¤?Œ ?…¸?“œë¥? headë¡? ë°”ê¾¸?Š” ?‹?œ¼ë¡? êµ¬í˜„?•  ?ˆ˜ ?žˆ?Šµ?‹ˆ?‹¤.
 */
 #include <iostream>
 #include <cstdlib>
@@ -9,56 +9,56 @@ using namespace std;
 class UnderflowException{};
 
 template<typename T>
-class ListNode{ //ë¦¬ìŠ¤íŠ¸ ë…¸ë“œ í´ëž˜ìŠ¤
+class ListNode{ //ë¦¬ìŠ¤?Š¸ ?…¸?“œ ?´?ž˜?Š¤
 public:
-  T value; //ê°’
-  ListNode<T> *next; //ë‹¤ìŒë…¸ë“œ
+  T value; //ê°?
+  ListNode<T> *next; //?‹¤?Œ?…¸?“œ
 
   ListNode<T>(): next(nullptr){}
   ListNode<T>(T value1,ListNode<T> *next1): value(value1), next(next1){}
 };
 
 template<typename T>
-class Stack{ //ìŠ¤íƒ í´ëž˜ìŠ¤
+class Stack{ //?Š¤?ƒ ?´?ž˜?Š¤
 public:
-  int size; //ìŠ¤íƒí¬ê¸°
-  ListNode<T> *tail; //ë‹¤ìŒ ê°’ì„ ê°€ë¦¬í‚´.
+  int size; //?Š¤?ƒ?¬ê¸?
+  ListNode<T> *tail; //?‹¤?Œ ê°’ì„ ê°?ë¦¬í‚´.
 
-  //ìƒì„±ìž
+  //?ƒ?„±?ž
   Stack<T>(): size(0), tail(nullptr){}
 
-  //ì†Œë©¸ìž
+  //?†Œë©¸ìž
   ~Stack<T>(){
     ListNode<T> *t1 = tail, *t2;
     while (t1 != nullptr){
-      t2 = t1->next; //í¬ì¸í„°ì´ë¦„->ë©¤ë²„ë³€ìˆ˜ì´ë¦„ = ê°’
+      t2 = t1->next; //?¬?¸?„°?´ë¦?->ë©¤ë²„ë³??ˆ˜?´ë¦? = ê°?
       delete t1;
       t1 = t2;
     }
   }
 
-  //ë©¤ë²„ í•¨ìˆ˜
+  //ë©¤ë²„ ?•¨?ˆ˜
   void push(T value){
-    tail = new ListNode<T>(value, tail); //tailê³¼ ìƒˆ listnodeë¥¼ ì—°ê²°í•œë‹¤.
+    tail = new ListNode<T>(value, tail); //tailê³? ?ƒˆ listnodeë¥? ?—°ê²°í•œ?‹¤.
     size++;
   }
 
-  T top(){ //ë§¨ ìœ„ ì›ì†Œ ë°˜í™˜
+  T top(){ //ë§? ?œ„ ?›?†Œ ë°˜í™˜
     try{
-      //ì˜ˆì™¸ì²˜ë¦¬ : ìŠ¤íƒì´ ë¹„ì–´ìžˆìŒ
+      //?˜ˆ?™¸ì²˜ë¦¬ : ?Š¤?ƒ?´ ë¹„ì–´?žˆ?Œ
       if (size==0) throw UnderflowException();
 
       return tail->value;
     }
     catch(UnderflowException e){
-      cerr<<"ìŠ¤íƒì´ ë¹„ì–´ ìžˆëŠ”ë° top ì—°ì‚°ì„ ì‹œë„í–ˆìŠµë‹ˆë‹¤."<< endl;
+      cerr<<"?Š¤?ƒ?´ ë¹„ì–´ ?žˆ?Š”?° top ?—°?‚°?„ ?‹œ?„?–ˆ?Šµ?‹ˆ?‹¤."<< endl;
       exit(1);
     }
   }
 
-  void pop(){ //ë§¨ ìœ„ì˜ ì›ì†Œ ì œê±°
+  void pop(){ //ë§? ?œ„?˜ ?›?†Œ ? œê±?
     try{
-      //ì˜ˆì™¸ ì²˜ë¦¬: ìŠ¤íƒì´ ë¹„ì–´ ìžˆìŒ
+      //?˜ˆ?™¸ ì²˜ë¦¬: ?Š¤?ƒ?´ ë¹„ì–´ ?žˆ?Œ
       if (size==0) throw UnderflowException();
 
       ListNode<T> *temp = tail->next;
@@ -67,14 +67,14 @@ public:
       size--;
     }
     catch(UnderflowException e){
-      cerr<<"ìŠ¤íƒì´ ë¹„ì–´ ìžˆëŠ”ë° pop ì—°ì‚°ì„ ì‹œë„í–ˆìŠµë‹ˆë‹¤." << endl;
+      cerr<<"?Š¤?ƒ?´ ë¹„ì–´ ?žˆ?Š”?° pop ?—°?‚°?„ ?‹œ?„?–ˆ?Šµ?‹ˆ?‹¤." << endl;
       exit(2);
     }
   }
 };
 
 template<typename T>
-ostream& operator <<(ostream &out,const Stack<T> &LL){//ì›ì†Œë“¤ì„ í•œ ì¤„ì— ì°¨ë¡€ëŒ€ë¡œ ì¶œë ¥
+ostream& operator <<(ostream &out,const Stack<T> &LL){//?›?†Œ?“¤?„ ?•œ ì¤„ì— ì°¨ë?????ë¡? ì¶œë ¥
   ListNode<T> *temp = LL.tail;
   out<<"top [";
   for (int i=0;i<LL.size;i++){

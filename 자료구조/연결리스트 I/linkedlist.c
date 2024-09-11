@@ -14,9 +14,9 @@ void error(char *message) {
 ListNode* insert_first(ListNode *head, int value) {
     //새로운 p 포인터가 할당받은 listnode를 가리키고 listnode(값,포인터)를 head로 변경하고 반환한다.
     ListNode *p = (ListNode *)malloc(sizeof(ListNode));
-    p->data = value;
-    p->link = head; //p -> 할당받음(value,link) -> head,값들 -> 값들
-    head = p; //head,p->할당받음->값들->값들 (head가 다른곳을 가르켜도 메모리 주소는 남아있다.)
+    p->data = value; //p->(value,link)
+    p->link = head; //p -> 할당받음(value,link) -> head -> 값들->값들
+    head = p; //head,p->할당받음->값들->값들 (head가 첫 노드가 된다.)
     return head;
 }
 
@@ -34,7 +34,7 @@ ListNode* delete_first(ListNode *head) {
     removed = head; //head,removed -> 첫칸 -> 둘째칸
     head = removed->link; //removed -> 첫칸,head -> 둘째칸(removed 뒤의 첫칸의 link를 가져갔으므로)
     free(removed); //removed 제거
-    return head;
+    return head; //head 뒤부터 조회하므로 첫칸은 없어진다.
 }
 
 ListNode* delete(ListNode *head,ListNode *pre) {

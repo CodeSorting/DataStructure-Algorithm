@@ -58,6 +58,7 @@ int main() {
             }
         }
     }
+    //map1과 map2가 같은지 판단
     for (int i=0;i<n;++i) {
         for (int j=0;j<m;++j) {
             if (map1[i][j]!=map2[i][j]) {

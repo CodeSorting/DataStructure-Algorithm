@@ -15,7 +15,7 @@ int solve(int index){ //top-down dp
   //큰 문자열까지 같으면 이미 끝
   if (index==l) return 0;
   //메모이제이션
-  int& ret = dp[index]; //&를 써서 ret이 변경되면 cache도 변경된다.
+  int& ret = dp[index];
   if (ret != -1) return ret;
 
   ret = solve(index + 1);

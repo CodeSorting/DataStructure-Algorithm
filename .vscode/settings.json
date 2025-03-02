@@ -42,6 +42,8 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "순차탐색.C": "cpp"
+        "순차탐색.C": "cpp",
+        "chrono": "cpp",
+        "valarray": "cpp"
     }
 }

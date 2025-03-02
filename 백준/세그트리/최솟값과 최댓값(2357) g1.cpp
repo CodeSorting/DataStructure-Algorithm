@@ -11,8 +11,7 @@ int main(){
   cout.tie(0);
   int N, M, start = 2;
   cin>>N>>M;
-  for(int i=0; i<262144; i++)
-    minST[i] = 0x7FFFFFFF; //INT_MAX다.
+  for(int i=0; i<262144; i++) minST[i] = 0x7FFFFFFF; //INT_MAX다.
   while(start <= N) start *= 2; //세그먼트트리의 시작점.
 
   for(int i=0; i<N; i++){

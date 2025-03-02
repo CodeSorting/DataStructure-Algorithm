@@ -2,7 +2,7 @@
 #include <queue>
 #include <vector>
 #include <cstring>
-using namespace std; //dp[n]=2×dp[n−1]+dp[n−2],dp[n] = N개의 줄에 대해 가능한 학생 선택 방법의 수
+using namespace std;
 
 bool isPrime[10001];
 bool visited[10001];

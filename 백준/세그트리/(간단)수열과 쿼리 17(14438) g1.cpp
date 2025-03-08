@@ -34,7 +34,7 @@ struct SegTree{
     if (e<=ns || s>=ne) return INF; //범위 안에 아예 없을 때
     if (s<=ns && ne<=e) return arr[node]; //범위 안에 아예 있을 때
     int mid = (ns+ne)/2;
-    return min(getmin(s,e,node*2,ns,mid),getmin(s,e,node*2+1,mid,ne)); //애매하게 걸쳐 있을 경우우
+    return min(getmin(s,e,node*2,ns,mid),getmin(s,e,node*2+1,mid,ne)); //애매하게 걸쳐 있을 경우
   }
 };
 

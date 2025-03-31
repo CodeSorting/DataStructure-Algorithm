@@ -5,7 +5,7 @@
 
 int list[MAX_SIZE];
 int n;
-
+//https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html 여기 시각화 잘됨.
 //삽입정렬 : index1부터 끝까지 차례대로 해당 값과 그 전 인덱스의 값들을 비교하면서 적정한 위치에 넣는다.
 void insertion_sort(int list[],int n) {
     int i,j,key;

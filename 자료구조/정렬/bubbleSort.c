@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #define MAX_SIZE 10
 #define swap(x,y,t) ( (t)=(x), (x)=(y), (y)=(t))
 
@@ -22,8 +23,9 @@ int main() {
     srand(time(NULL));
     for (int i=0;i<n;++i) {
         list[i] = rand() % 100; //난수 발생 범위 : 0~99
+        printf("%d ",list[i]);
     }
-
+    printf("\n");
     bubble_sort(list,n);
     for (int i=0;i<n;++i) {
         printf("%d ",list[i]);

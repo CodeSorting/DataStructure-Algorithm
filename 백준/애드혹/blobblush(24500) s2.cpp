@@ -6,7 +6,7 @@ ll n,m=1;
 
 int main() { //카드 수 적게, 사전순
     ios::sync_with_stdio(0);
-    cin.tie(0); cout.tie(0);
+    cin.tie(0);
     cin>>n;
     while (n>m) {
         m <<= 1;
